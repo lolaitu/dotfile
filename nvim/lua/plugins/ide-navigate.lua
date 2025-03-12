@@ -41,7 +41,7 @@ return {
       --"3rd/image.nvim"
     },
     config = function()
-      vim.keymap.set('n', '<leader>ft', ':Neotree filesystem reveal right toggle dir=%:p:h<CR>', {})
+      vim.keymap.set('n', '<leader>t', ':Neotree filesystem reveal right toggle dir=%:p:h<CR>', {})
     end
   },
 
