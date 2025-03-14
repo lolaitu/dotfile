@@ -9,11 +9,29 @@ return {
       require('lualine').setup({
         options = {
           theme = 'dracula'
-        }
+        },
+        sections = {
+          lualine_x = {
+            {
+              require("noice").api.status.command.get,
+              cond = require("noice").api.status.command.has,
+            },
+            {
+              function()
+                return vim.fn.reg_recording() ~= "" and "Recording @" .. vim.fn.reg_recording() or ""
+              end,
+              cond = function()
+                return vim.fn.reg_recording() ~= "" -- Affiche seulement si une macro est en cours d’enregistrement
+              end,
+            },
+            { 'fileformat' },
+            { 'filetype' },
+          },
+        },
       })
     end
   },
-  
+
   --############################################################################
   -- Noice overall nice ui
   --############################################################################
