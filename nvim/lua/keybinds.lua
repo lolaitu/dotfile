@@ -21,6 +21,7 @@ keymap("x", "<S-i>", ":move '<-2<CR>gv-gv", { desc = "Déplace le texte sélecti
 -- K déplace le texte sélectionné vers le bas en mode visuel (activé avec V)
 keymap("x", "<S-k>", ":move '>+1<CR>gv-gv", { desc = "Déplace le texte sélectionné vers le bas en mode visuel bloc" })
 
--- nouvelle ligne sous curseur avec <Enter> et au-dessus curseur avec <S-Enter>
-keymap('n', '<CR>', 'o<ESC>', { noremap = true, silent = true }, { desc = "nouvelle ligne sous curseur" })
-keymap('n', '<S-CR>', 'O<ESC>', { noremap = true, silent = true }, { desc = "nouvelle ligne sur curseur" })
+-- Nouvelle ligne sous le curseur avec <C-o> et au-dessus avec <C-S-o>
+keymap('n', '<C-o>', 'o<ESC>', { noremap = true, silent = true, desc = "Nouvelle ligne sous le curseur" })
+keymap('n', '<C-S-o>', 'O<ESC>', { noremap = true, silent = true, desc = "Nouvelle ligne au-dessus du curseur" })
+
