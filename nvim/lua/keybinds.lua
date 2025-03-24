@@ -9,7 +9,7 @@ keymap("i", ";;", "<ESC>", { desc = "Sortir du mode insertion avec ;;" })
 keymap("i", "<S-Space>", "<ESC>", { desc = "Sortir du mode insertion avec Shift + Espace" })
 
 -- on efface le surlignage de la recherche
-keymap("n", "<leader>nh", ":nohl<CR>", { desc = "Effacer le surlignage de la recherche" })
+keymap("n", "<leader>s", ":nohl<CR>", { desc = "Effacer le surlignage de la recherche" })
 
 -- I déplace le texte sélectionné vers le haut en mode visuel (activé avec v)
 keymap("v", "<S-j>", ":m .-2<CR>==", { desc = "Déplace le texte sélectionné vers le haut en mode visuel" })
@@ -25,3 +25,6 @@ keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", { desc = "Déplace le texte sélecti
 keymap('n', '<C-o>', 'o<ESC>', { noremap = true, silent = true, desc = "Nouvelle ligne sous le curseur" })
 keymap('n', '<C-S-o>', 'O<ESC>', { noremap = true, silent = true, desc = "Nouvelle ligne au-dessus du curseur" })
 
+-- Buffer suivant avec leader n et précédent avec leader b
+keymap("n", "<leader>n", ":bnext<CR>", { desc = "buffer suivant" })
+keymap("n", "<leader>b", ":bprevious<CR>", { desc = "buffer suivant" })

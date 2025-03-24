@@ -9,9 +9,12 @@ return {
       'nvim-lua/plenary.nvim'
     },
     config = function()
-     local builtin = require("telescope.builtin")
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+      local builtin = require("telescope.builtin")
+        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "find file in directory" })
+        vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "search text in file in directory" })
+        vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "list of buffer" })
+        vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = "list of past yank" })
+        vim.keymap.set('n', '<leader>fo', builtin.old_files, { desc = "list of recently opened files" })
     end
   },
   {
